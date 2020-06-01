@@ -8,10 +8,10 @@ Dataset was taken from Kaggle: [Used Cars Dataset](https://www.kaggle.com/austin
 
 The model used to predict the price are Random Forest Regressor, and for recommendation I'm using Content-Based Filtering based on price, condition, status, and type. 
 
-I'm using Flask to develop the page, and there's a cars1.csv file used as a database for recommendations.
+I'm using Flask to develop the page, and there's a [cars1.csv](https://github.com/iridwant/Final_Project_JCDS08/blob/master/cars1.csv) file used as a database for recommendations.
 
-+ For model, you can check the python notebook Predictions. If you need the joblib file, just uncomment the last line and run it. 
-+ For recommendation, you can check the python notebook Recommendations. Again, if you need the joblib file, just uncomment and run the last line.
-+ For EDA and data visualization, I've provided the steps in the python notebook EDA.
++ For model, you can check the python notebook [Predictions](https://github.com/iridwant/Final_Project_JCDS08/blob/master/Predictions.ipynb). If you need the joblib file, just uncomment the last line and run it. 
++ For recommendation, you can check the python notebook [Recommendations](https://github.com/iridwant/Final_Project_JCDS08/blob/master/Recommendations.ipynb). Again, if you need the joblib file, just uncomment and run the last line.
++ For EDA and data visualization, I've provided the steps in the python notebook [EDA](https://github.com/iridwant/Final_Project_JCDS08/blob/master/EDA.ipynb).
 
 Thank you.
