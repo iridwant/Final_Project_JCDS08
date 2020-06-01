@@ -63,5 +63,19 @@ I'm using Flask to develop the page, and there's a [cars1.csv](https://github.co
 
 <hr>
 <h3>Model Interfaces</h3>
-!
-Thank you.
+
+__Home Page__
+![home](/img/home.png)
+
+__Predictions__
+![predictions](/img/predictions.png)
+
+__Recommendations__
+![recommendations](/img/recommendations.png)
+
+__Predictions Result__
+![predictions-result](/img/predictions-result.png)
+
+__Recommendations Result__
+![recommendations-result](/img/recommendations-result.png)
+
