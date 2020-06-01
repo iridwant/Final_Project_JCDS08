@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Used Cars Price Predictions</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="static/img/favicon.png" rel="icon">
+  <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet">
+
+  <!-- Bootstrap css -->
+  <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+  <link href="static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="static/lib/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet">
+  <link href="static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="static/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="static/lib/modal-video/css/modal-video.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="static/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: eStartup
+    Theme URL: https://bootstrapmade.com/estartup-bootstrap-landing-page-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+
+  <style>
+    th, td{
+      padding: 5px;
+      vertical-align: top;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header id="header" class="header header-hide">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="#body" class="scrollto"><span>e</span>Startup</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#body"><img src="static/img/logo.png" alt="" title="" /></a>-->
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="/">Home</a></li>
+          <li><a href="/#features">Features</a></li>
+          <!-- <li><a href="/#screenshots">Screenshots</a></li> -->
+          <li class="menu-has-children"><a href="">Menu</a>
+            <ul>
+              <li><a href="/predict">Price Prediction</a></li>
+              <li><a href="/recommendation">Car Recommendations</a></li>
+            </ul>
+          </li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Hero Section
+  ============================-->
+  <section id="hero" class="wow fadeIn">
+    <div class="hero-container">
+      <h1>Used Car Price Predictions</h1>
+        <form action="http://localhost:5000/predict" method="POST">
+            <table>
+                <tr>
+                    <th><label for="year">Car Year (1994-2021)</label></th>
+                    <td>:</td>
+                    <td><input type="number" id="year" name="year" min="1994" max="2021" class="col-sm-10"></td>
+                </tr>
+                <tr>
+                  <th><label for="odometer">Mileages</label></th>
+                  <td>:</td>
+                  <td><input type="number" id="odometer" name="odometer" class="col-sm-10"></td>
+                </tr>
+                <tr>
+                    <th><label for="manufacturer">Manufacturer</label></th>
+                    <td>:</td>
+                    <td>
+                        <select id="manufacturer" name="manufacturer" class="col-sm-10">
+                            <option hidden disabled selected value=""></option>
+                            <option value="acura">Acura</option>
+                            <option value="alfa-romeo">Alfa-Romeo</option>
+                            <option value="audi">Audi</option>
+                            <option value="bmw">BMW</option>
+                            <option value="cadillac">Cadillac</option>
+                            <option value="chevrolet">Chevrolet</option>
+                            <option value="chrysler">Chrysler</option>
+                            <option value="dodge">Dodge</option>
+                            <option value="fiat">Fiat</option>
+                            <option value="ford">Ford</option>
+                            <option value="gmc">GMC</option>
+                            <option value="harley-davidson">Harley-Davidson</option>
+                            <option value="hyundai">Hyundai</option>
+                            <option value="infiniti">Infiniti</option>
+                            <option value="jaguar">Jaguar</option>
+                            <option value="jeep">Jeep</option>
+                            <option value="kia">Kia</option>
+                            <option value="land rover">Land Rover</option>
+                            <option value="lexus">Lexus</option>
+                            <option value="lincoln">Lincoln</option>
+                            <option value="mazda">Mazda</option>
+                            <option value="mercedes-benz">Mercedes-Benz</option>
+                            <option value="mercury">Mercury</option>
+                            <option value="mini">Mini</option>
+                            <option value="mitsubishi">Mitsubishi</option>
+                            <option value="nissan">Nissan</option>
+                            <option value="pontiac">Pontiac</option>
+                            <option value="porche">Porsche</option>
+                            <option value="ram">Ram</option>
+                            <option value="rover">Rover</option>
+                            <option value="saturn">Saturn</option>
+                            <option value="subaru">Subaru</option>
+                            <option value="tesla">Tesla</option>
+                            <option value="toyota">Toyota</option>
+                            <option value="volkswagen">Volkswagen</option>
+                            <option value="volvo">Volvo</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="condition">Condition</label></th>
+                    <td>:</td>
+                    <td>
+                        <select id="condition" name="condition" class="col-sm-10">
+                            <option hidden disabled selected value=""></option>
+                            <option value="excellent">Excellent</option>
+                            <option value="fair">Fair</option>
+                            <option value="good">Good</option>
+                            <option value="like new">Like New</option>
+                            <option value="new">New</option>
+                            <option value="salvage">Salvage</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="cylinders">Engine Cylinders</label></th>
+                    <td>:</td>
+                    <td>
+                        <select id="cylinders" name="cylinders" class="col-sm-10">
+                            <option hidden disabled selected value=""></option>
+                            <option value="3 cylinders">3 Cylinders</option>
+                            <option value="4 cylinders">4 Cylinders</option>
+                            <option value="5 cylinders">5 Cylinders</option>
+                            <option value="6 cylinders">6 Cylinders</option>
+                            <option value="8 cylinders">8 Cylinders</option>
+                            <option value="10 cylinders">10 Cylinders</option>
+                            <option value="12 cylinders">12 Cylinders</option>
+                            <option value="other">Others</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="fuel">Fuel Type</label></th>
+                    <td>:</td>
+                    <td>
+                        <select id="fuel" name="fuel" class="col-sm-10">
+                            <option hidden disabled selected value=""></option>
+                            <option value="diesel">Diesel</option>
+                            <option value="electric">Electric</option>
+                            <option value="gas">Gas</option>
+                            <option value="hybrid">Hybrid</option>
+                            <option value="other">Others</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="title_status">Status</label></th>
+                    <td>:</td>
+                    <td>
+                        <select id="title_status" name="title_status" class="col-sm-10">
+                            <option hidden disabled selected value=""></option>
+                            <option value="clean">Clean</option>
+                            <option value="lien">Lien</option>
+                            <option value="missing">Missing Parts</option>
+                            <option value="parts only">Parts Only</option>
+                            <option value="rebuilt">Rebuilt</option>
+                            <option value="salvage">Salvage</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="transmission">Transmission</label></th>
+                    <td>:</td>
+                    <td>
+                        <select id="transmission" name="transmission" class="col-sm-10">
+                          <option hidden disabled selected value=""></option>
+                          <option value="automatic">Automatic</option>
+                          <option value="manual">Manual</option>
+                          <option value="other">Other</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="drive">Wheel Drive</label></th>
+                    <td>:</td>
+                    <td>
+                        <select id="drive" name="drive" class="col-sm-10">
+                          <option hidden disabled selected value=""></option>
+                          <option value="4wd">4 Wheel Drive/All Wheel Drive</option>
+                          <option value="fwd">Front Wheel Drive</option>
+                          <option value="rwd">Rear Wheel Drive</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="type">Type</label></th>
+                    <td>:</td>
+                    <td>
+                        <select id="type" name="type" class="col-sm-10">
+                            <option hidden disabled selected value=""></option>
+                            <option value="bus">Bus</option>
+                            <option value="convertible">Convertible</option>
+                            <option value="coupe">Coupe</option>
+                            <option value="hatchback">Hatchback</option>
+                            <option value="mini-van">Mini-Van</option>
+                            <option value="offroad">Offroad</option>
+                            <option value="pickup">Pickup</option>
+                            <option value="sedan">Sedan</option>
+                            <option value="SUV">SUV</option>
+                            <option value="truck">Truck</option>
+                            <option value="van">Van</option>
+                            <option value="wagon">Wagon</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="paint_color">Color</label></th>
+                    <td>:</td>
+                    <td>
+                        <select id="paint_color" name="paint_color" class="col-sm-10">
+                            <option hidden disabled selected value=""></option>
+                            <option value="black">Black</option>
+                            <option value="blue">Blue</option>
+                            <option value="brown">Brown</option>
+                            <option value="green">Green</option>
+                            <option value="grey">Grey</option>
+                            <option value="orange">Orange</option>
+                            <option value="purple">Purple</option>
+                            <option value="red">Red</option>
+                            <option value="silver">Silver</option>
+                            <option value="white">White</option>
+                            <option value="yellow">Yellow</option>
+                            <option value="custom">Custom</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: center;">
+                        <input type="submit" class="btn-get-started scrollto" value="Predict">
+                        <input type="reset" class="btn-get-started scrollto" value="Reset">
+                    </td>
+                </tr>
+            </table>
+        </form>
+      
+    </div>
+  </section><!-- #hero -->
+  
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer class="footer">
+    
+
+    <div class="copyrights">
+      <div class="container">
+        <p>&copy; Copyrights eStartup. All rights reserved.</p>
+        <div class="credits">
+          <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eStartup
+          -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/modal-video/js/modal-video.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

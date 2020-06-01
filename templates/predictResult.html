@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Used Cars Price Predictions</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="static/img/favicon.png" rel="icon">
+  <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet">
+
+  <!-- Bootstrap css -->
+  <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+  <link href="static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="static/lib/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet">
+  <link href="static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="static/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="static/lib/modal-video/css/modal-video.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="static/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: eStartup
+    Theme URL: https://bootstrapmade.com/estartup-bootstrap-landing-page-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+
+  <style>
+    th{
+      padding: 5px;
+      vertical-align: top;
+      text-align: left;
+    }
+    td{
+      padding: 5px;
+      vertical-align: top;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header id="header" class="header header-hide">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="#body" class="scrollto"><span>e</span>Startup</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#body"><img src="static/img/logo.png" alt="" title="" /></a>-->
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="/">Home</a></li>
+          <li><a href="/#features">Features</a></li>
+          <!-- <li><a href="/#screenshots">Screenshots</a></li> -->
+          <li class="menu-has-children"><a href="">Model</a>
+            <ul>
+              <li><a href="/predict">Used Car Price Prediction</a></li>
+              <li><a href="/recommendation">Used Car Recommendations</a></li>
+            </ul>
+          </li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Hero Section
+  ============================-->
+  <section id="hero" class="wow fadeIn">
+    <div class="hero-container">
+      <h1>Prediction Result</h1>
+        <h5>Here is the price prediction from the data you've inputed:</h5>
+        <p></p>
+            <table style="outline-style: solid;">
+                <tr>
+                    <th>Year</th>
+                    <td>:</td>
+                    <td>{{data['year']}}</td>
+                </tr>
+                <tr>
+                    <th>Mileages</th>
+                    <td>:</td>
+                    <td>{{data['odometer']}}</td>
+                </tr>
+                <tr>
+                    <th>Manufacturer</th>
+                    <td>:</td>
+                    <td>{{data['manufacturer'].title()}}</td>
+                </tr>
+                <tr>
+                    <th>Condition</th>
+                    <td>:</td>
+                    <td>{{data['condition'].title()}}</td>
+                </tr>
+                <tr>
+                    <th>Engine Cylinders</th>
+                    <td>:</td>
+                    <td>{{data['cylinders'].title()}}</td>
+                </tr>
+                <tr>
+                    <th>Fuel Type</th>
+                    <td>:</td>
+                    <td>{{data['fuel'].title()}}</td>
+                </tr>
+                <tr>
+                    <th>Status</th>
+                    <td>:</td>
+                    <td>{{data['title_status'].title()}}</td>
+                </tr>
+                <tr>
+                    <th>Transmission</th>
+                    <td>:</td>
+                    <td>{{data['transmission'].title()}}</td>
+                </tr>
+                <tr>
+                    <th>Wheel Drive</th>
+                    <td>:</td>
+                    <td>{{'4 Wheel Drive/All Wheel Drive' if data['drive'] == '4wd' 
+                        else 'Rear Wheel Drive' if data['drive'] == 'rwd' else 'Front Wheel Drive'}}</td>
+                </tr>
+                <tr>
+                    <th>Type</th>
+                    <td>:</td>
+                    <td>{{data['type'].title()}}</td>
+                </tr>
+                <tr>
+                    <th>Color</th>
+                    <td>:</td>
+                    <td>{{data['paint_color'].title()}}</td>
+                </tr>
+                <tr>
+                    <th>Price Prediction</th>
+                    <td>:</td>
+                    <th>{{'US$ {:,.2f}'.format(data['price'])}}</th>
+                </tr>
+            </table>
+            <p></p>
+            <h5><b>Disclaimer:</b> 
+                <br><i>Those price prediction above, are just a rough estimation about the used car data you've inputed.
+                <br>The actual price might be slightly under, or above the predicted price.
+                <br>Please use the predicted price with precaution.</i>
+            </h5>
+    </div>
+  </section><!-- #hero -->
+  
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer class="footer">
+    
+
+    <div class="copyrights">
+      <div class="container">
+        <p>&copy; Copyrights eStartup. All rights reserved.</p>
+        <div class="credits">
+          <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eStartup
+          -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/modal-video/js/modal-video.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
